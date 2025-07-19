@@ -1,0 +1,31 @@
+{
+  "name": "melodium-portfolio",
+  "version": "1.0.0",
+  "description": "A futuristic 3D portfolio website using Three.js",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "serve": "node server.js",
+    "build": "echo 'Static site - no build needed'",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "threejs",
+    "3d",
+    "web-development",
+    "game-development",
+    "music-production"
+  ],
+  "author": "Melodium",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melodium/portfolio.git"
+  },
+  "homepage": "https://melodium.dev"
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melodium - Creative Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main_optimized.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link" onclick="showSection('gamedev')">GameDev</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('webdev')">WebDev</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('music')">Sound</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Left Side Logo -->
+    <div class="side-logo" onclick="showHome()">
+        <img src="planet.png" alt="Melodium Logo" class="side-logo-image">
+    </div>
+
+    <!-- Fixed Back Button -->
+    <button class="back-btn" onclick="showHome()" style="display: none;">←</button>
+
+    <!-- Main 3D Scene -->
+    <div id="scene-container" class="scene-container">
+        <canvas id="three-canvas"></canvas>
+        
+        <!-- Overlay Content -->
+        <div class="overlay-content">
+            <h1 class="main-title">Creative Developer & Audio Engineer</h1>
+            <div class="cards-container">
+                <!-- Game Development Card -->
+                <div class="project-card" onclick="showSection('gamedev')">
+                    <h3>Game Development</h3>
+                    <p>Creating immersive 2D and 3D experiences with Godot Engine, featuring dynamic gameplay mechanics and polished user interfaces.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Godot</span>
+                        <span class="tag">GDScript</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">2D/3D</span>
+                    </div>
+                </div>
+
+                <!-- Music Production Card -->
+                <div class="project-card" onclick="showSection('music')">
+                    <h3>Audio Engineering</h3>
+                    <p>Professional music production and dynamic game audio using Reaper DAW with advanced mixing and mastering techniques.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Reaper</span>
+                        <span class="tag">Mixing</span>
+                        <span class="tag">Mastering</span>
+                        <span class="tag">Game Audio</span>
+                    </div>
+                </div>
+
+                <!-- Web Development Card -->
+                <div class="project-card" onclick="showSection('webdev')">
+                    <h3>Full-Stack Development</h3>
+                    <p>Building modern web applications with Laravel backend and React frontend, delivering responsive and scalable solutions.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">React</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="gamedev-section" class="content-section hidden">
+        <div class="section-header">
+            <h2>Game Development Portfolio</h2>
+        </div>
+        <div class="content-grid">
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Godot Projects</div>
+                </div>
+                <div class="project-info">
+                    <h3>Godot Engine Mastery</h3>
+                    <p>Specialized in Godot Engine for both 2D and 3D game development:</p>
+                    <ul>
+                        <li>Advanced GDScript programming and scene management</li>
+                        <li>Custom node systems and modular game architecture</li>
+                        <li>Physics-based gameplay mechanics and animations</li>
+                        <li>Responsive UI/UX design for various screen sizes</li>
+                        <li>Performance optimization for multiple platforms</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Godot Engine, GDScript, C#, Blender, Aseprite
+                    </div>
+                    <div class="tech-details">
+                        <strong>Portfolio:</strong> <a href="https://nightgoblin-corporation.itch.io/" target="_blank">View Games on Itch.io</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">2D Game Design</div>
+                </div>
+                <div class="project-info">
+                    <h3>2D Game Development</h3>
+                    <p>Creating engaging 2D experiences with pixel-perfect precision:</p>
+                    <ul>
+                        <li>Sprite-based animation systems and character controllers</li>
+                        <li>Tilemap design and procedural level generation</li>
+                        <li>Custom particle systems and visual effects</li>
+                        <li>Integrated audio systems with dynamic music</li>
+                        <li>Save/load systems and game progression mechanics</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Godot 2D, Pixel Art, Animation, Audio Integration
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">3D Development</div>
+                </div>
+                <div class="project-info">
+                    <h3>3D Game Programming</h3>
+                    <p>Building immersive 3D worlds with modern techniques:</p>
+                    <ul>
+                        <li>3D scene composition and lighting systems</li>
+                        <li>Character movement and camera controllers</li>
+                        <li>Mesh generation and custom shaders</li>
+                        <li>Physics simulations and collision systems</li>
+                        <li>Cross-platform deployment and optimization</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Godot 3D, GLSL Shaders, 3D Modeling, Physics
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="music-section" class="content-section hidden">
+        <div class="section-header">
+            <h2>Audio Engineering & Music Production</h2>
+        </div>
+        <div class="content-grid">
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Reaper Production</div>
+                </div>
+                <div class="project-info">
+                    <h3>Professional Audio Engineering</h3>
+                    <p>Deep expertise in Reaper DAW for music production and game audio:</p>
+                    <ul>
+                        <li>Advanced mixing techniques with custom routing</li>
+                        <li>Professional mastering with industry-standard plugins</li>
+                        <li>Custom macros and shortcuts for efficient workflow</li>
+                        <li>Multi-track recording and editing precision</li>
+                        <li>Real-time audio processing and effects chains</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Reaper DAW, VST Plugins, Audio Mixing, Mastering
+                    </div>
+                    <div class="tech-details">
+                        <strong>Listen:</strong> <a href="https://melodiumm.bandcamp.com/" target="_blank">Melodium on Bandcamp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Dynamic Game Audio</div>
+                </div>
+                <div class="project-info">
+                    <h3>Dynamic Game Music Systems</h3>
+                    <p>Creating adaptive audio experiences for interactive media:</p>
+                    <ul>
+                        <li>Adaptive music that responds to gameplay events</li>
+                        <li>Seamless loop transitions and musical layers</li>
+                        <li>Interactive sound design for game mechanics</li>
+                        <li>Optimized audio assets for game engines</li>
+                        <li>Real-time audio parameter automation</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Reaper, Godot Audio, Dynamic Music Systems, Sound Design
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Music Composition</div>
+                </div>
+                <div class="project-info">
+                    <h3>Original Music Composition</h3>
+                    <p>Composing original soundtracks and standalone music:</p>
+                    <ul>
+                        <li>Genre-diverse composition from ambient to electronic</li>
+                        <li>Custom instrument design and synthesis</li>
+                        <li>Collaborative work with game developers</li>
+                        <li>Professional quality production and delivery</li>
+                        <li>Fast turnaround with efficient workflow optimization</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Composition, Synthesis, Audio Production, Creative Direction
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="webdev-section" class="content-section hidden">
+        <div class="section-header">
+            <h2>Full-Stack Web Development</h2>
+        </div>
+        <div class="content-grid">
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Laravel Applications</div>
+                </div>
+                <div class="project-info">
+                    <h3>Laravel Backend Development</h3>
+                    <p>Building robust web applications with Laravel framework:</p>
+                    <ul>
+                        <li>RESTful API development with authentication</li>
+                        <li>Database design and Eloquent ORM optimization</li>
+                        <li>Queue management and background job processing</li>
+                        <li>Custom middleware and service providers</li>
+                        <li>Testing with PHPUnit and feature tests</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Laravel, PHP, MySQL, Redis, Composer, Artisan
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">React Frontend</div>
+                </div>
+                <div class="project-info">
+                    <h3>React Frontend Development</h3>
+                    <p>Creating dynamic user interfaces with modern React:</p>
+                    <ul>
+                        <li>Component-based architecture with hooks</li>
+                        <li>State management with Context API and Redux</li>
+                        <li>Responsive design with CSS modules and styled-components</li>
+                        <li>API integration and async data handling</li>
+                        <li>Performance optimization and code splitting</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> React, JavaScript ES6+, CSS3, HTML5, npm/yarn
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="placeholder-image">Full-Stack Portfolio</div>
+                </div>
+                <div class="project-info">
+                    <h3>Complete Web Solutions</h3>
+                    <p>End-to-end web development with modern technologies:</p>
+                    <ul>
+                        <li>Full-stack applications with Laravel + React</li>
+                        <li>Database design and optimization strategies</li>
+                        <li>DevOps with Linux server management</li>
+                        <li>Version control with Git and collaborative workflows</li>
+                        <li>Fast development cycles with efficient tooling</li>
+                    </ul>
+                    <div class="tech-details">
+                        <strong>Technologies:</strong> Full-Stack Development, Linux, Git, DevOps, UML Design
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <p>Ready to collaborate on your next project? Let's create something amazing together!</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <div class="contact-links">
+                    <a href="mailto:yaselmountaqi@gmail.com" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        yaselmountaqi@gmail.com
+                    </a>
+                    <a href="https://github.com/garrador123" class="contact-link" target="_blank">
+                        <span class="contact-icon">💻</span>
+                        GitHub Portfolio
+                    </a>
+                    <a href="https://nightgoblin-corporation.itch.io/" class="contact-link" target="_blank">
+                        <span class="contact-icon">🎮</span>
+                        Games on Itch.io
+                    </a>
+                    <a href="https://melodiumm.bandcamp.com/" class="contact-link" target="_blank">
+                        <span class="contact-icon">🎵</span>
+                        Music on Bandcamp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Technical Skills</h4>
+                <div class="skills-list">
+                    <span class="skill-tag">Godot Engine</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Reaper DAW</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">UML Design</span>
+                    <span class="skill-tag">Audio Engineering</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Melodium. Creative Developer | Audio Engineer | Fast Learner</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Three.js scene only on desktop
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            
+            if (!isMobile && typeof init === 'function') {
+                setTimeout(init, 500); // Small delay to ensure DOM is ready
+            }
+        });
+    </script>
+</body>
+</html>
